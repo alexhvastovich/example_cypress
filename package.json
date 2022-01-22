@@ -1,0 +1,41 @@
+{
+  "name": "qacart-todo_cypress",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cypress": "^9.2.0",
+    "json-server": "^0.16.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "json-server-auth": "^2.0.2",
+    "react-scripts": "^5.0.0",
+    "start-server-and-test": "^1.14.0"
+  },
+  "scripts": {
+    "start:frontend": "react-scripts start",
+    "start:server": "json-server -p 8080 db.json -m ./node_modules/json-server-auth -r routes.json",
+    "start": "npm-run-all --parallel start:server start:frontend",
+    "cy:run": "npx cypress run --record --key 5f4afcf0-bdf9-4ab2-a3a3-9a394f24fd76",
+    "build:and:test": "start-server-and-test start http://localhost:3000 cy:run",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "e2e:chrome": "cypress run --browser chrome --headless",
+    "e2e:firefox": "cypress run --browser firefox --headless",
+    "e2e:chrome:dashboard": "cypress run --record --key 5f4afcf0-bdf9-4ab2-a3a3-9a394f24fd76 --browser chrome --headless"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
