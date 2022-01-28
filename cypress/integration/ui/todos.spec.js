@@ -28,7 +28,7 @@ describe('Todo UI testin', () => {
     })
 
     it('TC-4 should not add an empty todo', () => {
-        cy.addNewTodo("Hello CircleCi")
+        cy.addNewTodo("Hello CircleCi Another One")
     })
 
     afterEach(() => {
