@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-worklows:
+workflows:
   build:
     jobs:
       - cypress/run:
-          command: npm run build:and:test
+        command: npm run build:and:test
