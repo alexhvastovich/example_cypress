@@ -5,4 +5,4 @@ workflows:
   build:
     jobs:
       - cypress/run:
-        command: npm run build:and:test
+          command: npm run build:and:test
